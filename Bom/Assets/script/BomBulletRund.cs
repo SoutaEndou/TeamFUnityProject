@@ -17,11 +17,9 @@ public class BomBulletRund : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bom = GameObject.Find("Bom").GetComponent<Bom>();
-        if (bom.flg)
-        {
 
-        }
+        bom = GameObject.Find("Bom").GetComponent<Bom>();
+
         rndm = 0;
         myTransform = this.transform;
         bomPos = myTransform.position;
@@ -53,7 +51,7 @@ public class BomBulletRund : MonoBehaviour
     //}
     void Update()
     {
-        bom = GameObject.Find("Bom").GetComponent<Bom>();
+        //bom = GameObject.Find("Bom").GetComponent<Bom>();
         if (bom.flg)
         {
 

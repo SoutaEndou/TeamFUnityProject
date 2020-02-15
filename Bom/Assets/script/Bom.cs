@@ -11,7 +11,7 @@ public class Bom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        flg = false;
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Bom : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("playerBullets")|| other.CompareTag("bomBullets"))
+        if (other.CompareTag("playerBullets") || other.CompareTag("bomBullets"))
         {
             flg = true;
 
