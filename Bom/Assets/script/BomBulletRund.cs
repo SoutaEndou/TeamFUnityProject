@@ -18,7 +18,7 @@ public class BomBulletRund : MonoBehaviour
     void Start()
     {
 
-        bom = GameObject.Find("Bom").GetComponent<Bom>();
+        bom = this.bom;
 
         rndm = 0;
         myTransform = this.transform;
