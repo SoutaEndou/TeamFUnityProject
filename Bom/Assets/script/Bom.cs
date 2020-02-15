@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Bom : MonoBehaviour
 {
+    public bool flg = false;
    
     // Start is called before the first frame update
     void Start()
@@ -18,9 +21,11 @@ public class Bom : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("playerBullets"))
+        if (other.CompareTag("playerBullets")|| other.CompareTag("bomBullets"))
         {
-            Destroy(gameObject);
+            flg = true;
+
+            //Destroy(gameObject);
         }
     }
   

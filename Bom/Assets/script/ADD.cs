@@ -9,11 +9,15 @@ public class ADD : MonoBehaviour
     float y;
     float z;
     float delta;
+
+    Bom bom;
     // Start is called before the first frame update
     void Start()
     {
+        bom = GameObject.Find("Bom").GetComponent<Bom>();
+   
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * 20/*, ForceMode.Force*/);
+        rb.AddForce(transform.forward * 2000, ForceMode.Force);
     }
     void Update()
     {

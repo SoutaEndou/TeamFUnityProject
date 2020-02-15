@@ -10,10 +10,19 @@ public class BomBulletRund : MonoBehaviour
     float span;
     float delta;
     int bulletVolume;
+
+    int rndm;
+
+    Bom bom;
     // Start is called before the first frame update
     void Start()
     {
+        bom = GameObject.Find("Bom").GetComponent<Bom>();
+        if (bom.flg)
+        {
 
+        }
+        rndm = 0;
         myTransform = this.transform;
         bomPos = myTransform.position;
         bulletVolume = 50;
@@ -44,23 +53,51 @@ public class BomBulletRund : MonoBehaviour
     //}
     void Update()
     {
-        this.delta += Time.deltaTime;
-        if (this.delta > this.span && bulletVolume > 0)
+        bom = GameObject.Find("Bom").GetComponent<Bom>();
+        if (bom.flg)
         {
-            bulletVolume--;
-            this.delta = 0;
-            GameObject itemBomBullets = Instantiate(BomBullets) as GameObject;
-            float x = bomPos.x;
-            float y = bomPos.y;
-            float z = bomPos.z;
-            itemBomBullets.transform.position = new Vector3(x, y, z);
-            float rx = Random.Range(0.0f, -721.0f);
-            float ry = Random.Range(180.0f, -321.0f);
-            float rz = Random.Range(0.0f, -721.0f);
-            itemBomBullets.transform.Rotate(0.0f, ry, 0.0f);
 
 
+            this.delta += Time.deltaTime;
+            if (this.delta > this.span && bulletVolume > 0)
+            {
+                bulletVolume--;
+                this.delta = 0;
+                GameObject itemBomBullets = Instantiate(BomBullets) as GameObject;
+                float x = bomPos.x;
+                float y = bomPos.y;
+                float z = bomPos.z;
+                itemBomBullets.transform.position = new Vector3(x, y, z);
+                float rx = Random.Range(0.0f, -721.0f);
+                float ry = Random.Range(0.0f, 91.0f);
+                float rz = Random.Range(0.0f, -10.0f);
 
+                rndm = Random.Range(1, 4);
+                if (rndm == 1)
+                {
+                    itemBomBullets.transform.Rotate(0.0f, ry, 0.0f);
+                }
+                else if (rndm == 2)
+                {
+                    itemBomBullets.transform.Rotate(0.0f, rx, 0.0f);
+                }
+                else if (rndm == 3)
+                {
+                    itemBomBullets.transform.Rotate(0.0f, rz, 0.0f);
+                }
+
+
+                   
+
+
+            }
+            
+        }
+
+        if (bulletVolume <= 0)
+        {
+            Destroy(gameObject);
         }
     }
+
 }
