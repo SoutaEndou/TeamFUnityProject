@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7883379264118703817}
   - component: {fileID: 4094134361514196611}
   - component: {fileID: 4883849554430744559}
-  - component: {fileID: -8290675434523904534}
+  - component: {fileID: 4989371677057673473}
   m_Layer: 0
   m_Name: BomBullets
   m_TagString: bomBullets
@@ -92,7 +92,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7883379264118703822}
   m_Material: {fileID: 13400000, guid: 08a20f9961281204b80baa5f26427de6, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -169,7 +169,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!54 &-8290675434523904534
+--- !u!54 &4989371677057673473
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,5 +183,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0

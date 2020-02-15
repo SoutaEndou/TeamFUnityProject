@@ -12,15 +12,16 @@ public class BomBullets : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         delta = 0.0f;
-        advanceBullet = -0.3f;
+        advanceBullet = 10.3f;
+        //rb.AddForce(this.advanceBullet,0, this.advanceBullet);
     }
 
     // Update is called once per frame
     void Update()
     {
         this.delta += Time.deltaTime;
-        /*transform.Translate*/
-        rb.AddForce(/*this.advanceBullet,0,0*/1,1,1);
+        //transform.Translate(this.advanceBullet, 0, 0);
+        rb.AddForce(this.advanceBullet, 0,0);
         if (delta >= 2.0f)
         {
             delta = 0.0f;

@@ -54,7 +54,9 @@ public class BomBulletRund : MonoBehaviour
             float y = bomPos.y;
             float z = bomPos.z;
             itemBomBullets.transform.position = new Vector3(x, y, z);
-            float ry = Random.Range(0.0f, -720.0f);
+            float rx = Random.Range(0.0f, -721.0f);
+            float ry = Random.Range(180.0f, -321.0f);
+            float rz = Random.Range(0.0f, -721.0f);
             itemBomBullets.transform.Rotate(0.0f, ry, 0.0f);
 
 
